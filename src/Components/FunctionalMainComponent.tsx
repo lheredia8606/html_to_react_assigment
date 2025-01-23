@@ -1,7 +1,7 @@
 import { characters } from "../data";
 import { ClassTopCharacters } from "./ClassTopCharacters";
-import { CharacterCard } from "./FunctionalCharacterCard";
-export const Functional = () => {
+import { FunctionalCharacterCard } from "./FunctionalCharacterCard";
+export const FunctionalMainComponent = () => {
   const mostVoted = () => {
     return characters
       .sort((item1, item2) => item2.votes - item1.votes)
@@ -36,38 +36,17 @@ export const Functional = () => {
                 key={topCharacter.name}
               />
             ))}
-            {/*             
-            <tr className="dark">
-              <td>Alfonse Elrich</td>
-              <td>Being Loveable, Alchemy</td>
-              <td>110</td>
-            </tr>
-            <tr className="light">
-              <td>Edward Elrich "Full Metal Alchemist"</td>
-              <td>Alchemy, Human Transmutation</td>
-              <td>100</td>
-            </tr>
-            <tr className="dark">
-              <td>Hawkeye</td>
-              <td>Sniper, Loyal AF</td>
-              <td>95</td>
-            </tr>
-            <tr className="light">
-              <td>Mj. Armstrong</td>
-              <td>Alchemy, Muscles</td>
-              <td>94</td>
-            </tr>
-            <tr className="dark">
-              <td>Nina</td>
-              <td>Loving Dogs, being adorable</td>
-              <td>93</td>
-            </tr> */}
           </tbody>
         </table>
       </section>
       <section id="character-cards">
         {characters.map((character) => {
-          return <CharacterCard key={character.name} character={character} />;
+          return (
+            <FunctionalCharacterCard
+              key={character.name}
+              character={character}
+            />
+          );
         })}
       </section>
     </>

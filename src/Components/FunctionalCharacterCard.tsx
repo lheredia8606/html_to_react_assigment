@@ -1,6 +1,6 @@
 import { TCharacter } from "../data";
 
-export const CharacterCard = ({
+export const FunctionalCharacterCard = ({
   character: { name, description, image, nickName },
 }: {
   character: TCharacter;
