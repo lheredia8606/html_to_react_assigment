@@ -1,4 +1,5 @@
 import { characters } from "../data";
+import { ClassTopCharacters } from "./ClassTopCharacters";
 import { CharacterCard } from "./FunctionalCharacterCard";
 export const Functional = () => {
   const mostVoted = () => {
@@ -28,6 +29,14 @@ export const Functional = () => {
             </tr>
           </thead>
           <tbody>
+            {mostVoted().map((topCharacter, index) => (
+              <ClassTopCharacters
+                character={topCharacter}
+                isOdd={index % 2 === 1}
+                key={topCharacter.name}
+              />
+            ))}
+            {/*             
             <tr className="dark">
               <td>Alfonse Elrich</td>
               <td>Being Loveable, Alchemy</td>
@@ -52,7 +61,7 @@ export const Functional = () => {
               <td>Nina</td>
               <td>Loving Dogs, being adorable</td>
               <td>93</td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
       </section>
